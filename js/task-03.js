@@ -13,16 +13,14 @@ const images = [
   },
 ];
 
-const galleryImages = document.querySelector('.gallery');
-console.dir(galleryImages);
+const Images = document.querySelector('.gallery');
+console.dir(Images);
+
 images.forEach((image) => {
-   const Item = document.createElement('li');
-      Item.classList.add('gallery-items');
-
-      const img = document.createElement('img');
-      img.src = image.url;
-      img.alt = image.alt;
-
-      Item.appendChild(img);
-      galleryImages.insertAdjacentElement('beforeend', Item);
+  const Item = `
+    <li class="gallery-items">
+      <img src="${image.url}" alt="${image.alt}">
+    </li>
+  `;
+  Images.insertAdjacentHTML('beforeend', Item);
 });
