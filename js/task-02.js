@@ -11,10 +11,14 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients')
 console.dir(ingredientsList)
 
+const Elements =[]
+
 ingredients.forEach((ingredient) => {
   const El = document.createElement('li')
   El.textContent = ingredient;
   El.classList.add('item')
-  ingredientsList.append(El)
+  Elements.push(El);
   console.log(El)
 })
+ingredientsList.append(...Elements)
+
