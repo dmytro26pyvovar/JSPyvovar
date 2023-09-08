@@ -1,19 +1,15 @@
 const loginForm = document.querySelector('.login-form');
 
-loginForm.addEventListener('submit', function (event) {
+const formData = {};
+
+function onFormSubmit(event) {
     event.preventDefault();
-    const userData = {};
-    const formData = new FormData(loginForm);
-
-     formData.forEach(function(value, key) {
-                userData[key] = value;
-     });
-    if (Object.values(userData).every(value => value)) {
-        console.log(userData);
-        
+    if (event.currentTarget.elements.email.value === '' || event.currentTarget.elements.password.value === '') {
+         alert('Всі поля мають бути заповнені!!!')
+        event.currentTarget.reset();
     } else {
-            alert('Всі поля повинні бути заповнені.');
-        }
-loginForm.reset();
-
-})
+        formData.email = event.currentTarget.elements.email.value;
+        formData.password = event.currentTarget.elements.password.value;
+        event.currentTarget.reset();
+    }
+}
