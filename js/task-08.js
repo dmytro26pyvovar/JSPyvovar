@@ -13,3 +13,5 @@ function onFormSubmit(event) {
         event.currentTarget.reset();
     }
 }
+
+loginForm.addEventListener('submit', onFormSubmit);
