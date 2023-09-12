@@ -17,13 +17,12 @@ const markup = galleryItems.map(link => `
 
 gallery.insertAdjacentHTML('beforeend', markup);
 
-console.log(galleryItems);
-
-markup.addEventListener('click', (e))
-  if (e.target.nodeName === 'IMG') {
-    const largeImage = e.target.dataset.source;
-    const instance = markup;
-
-    instance.show();
-  }
+gallery.addEventListener('click', handleClick);
+  
+function handleClick(event) {
+  const instance = basicLightBox.create(`
+  <div class = "box"><img class ="gallery__image" src="${link.smallImage}" data-source="${link.largeImage}" alt="${link.imageDescription}"></div>`);
+  instance.show();
+  return;
+}
 
