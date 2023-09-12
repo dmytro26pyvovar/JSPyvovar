@@ -18,3 +18,12 @@ const markup = galleryItems.map(link => `
 gallery.insertAdjacentHTML('beforeend', markup);
 
 console.log(galleryItems);
+
+markup.addEventListener('click', (e))
+  if (e.target.nodeName === 'IMG') {
+    const largeImage = e.target.dataset.source;
+    const instance = markup;
+
+    instance.show();
+  }
+
